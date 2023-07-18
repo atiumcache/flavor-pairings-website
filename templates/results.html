@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <div class="container" style="max-width: 1100px">
+        <h1>Pairings for {{ main }}: </h1>
+        <ul>
+        {% for item in pairings %}
+            <li>
+                {{item}}
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
