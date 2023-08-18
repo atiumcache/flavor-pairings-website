@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <h1>What ingredient do you have?</h1>
+    <form action="/results" method="get">
+        <input list="search-options" autofocus name="choice" type="text">
+    </form>
+
+    <datalist id="search-options">
+        {% for option in allMains %}
+            <option value="{{ option }}"">
+        {% endfor %}
+    </datalist>
+
+    <h2>That isn't a valid ingredient. Try again!</h2>
+
+{% endblock %}
