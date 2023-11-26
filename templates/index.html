@@ -2,15 +2,26 @@
 
 {% block body %}
 
-    <h1>What ingredient do you have?</h1>
-    <form action="/results" method="get">
-        <input list="search-options" autofocus name="choice" type="text">
-    </form>
+<div class="Card">
+    <div class="CardInner">
+    <label>What ingredient do you have on hand?</label>
+    <div class="container">
+      <div class="Icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#657789" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </div>
+      <div class="InputContainer">
+        <form action="/results" method="get">
+            <input list="search-options" autofocus name="choice" type="text">
+        </form>
+      </div>
+    </div>
+   </div>
+  </div>
 
-    <datalist id="search-options">
-        {% for option in allMains %}
-            <option value="{{ option }}"">
-        {% endfor %}
-    </datalist>
+  <datalist id="search-options">
+    {% for option in allMains %}
+        <option value="{{ option }}"">
+    {% endfor %}
+</datalist>
 
 {% endblock %}
