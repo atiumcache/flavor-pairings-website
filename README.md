@@ -28,6 +28,12 @@ The data is scraped from a PDF version of a fantastic book, _The Flavor Bible_. 
 
 We decided to have the program manually clean the data every time it runs, as this would allow the data file to be added to or altered. Or, the app could be used with a completely different set of data. 
 
+### What future work is planned?
+
+- Search for 2 or more ingredients at once.
+- Visualize flavor connections with an interactive graph/network.
+- Improve UI/UX.
+
 ## License
 Distributed under the MIT License. See LICENSE.txt for more information.
 
