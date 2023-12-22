@@ -4,7 +4,7 @@ View the prototype here:
 
 http://atiumcache.pythonanywhere.com/
 
-We are currently working on CSS and additional functionality.
+We are currently working on improved CSS and additional functionality.
 
 With an optimized UX/UI, this app will be utilized by chefs and cooks around the world, both professional and amateur.
 
