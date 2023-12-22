@@ -1,7 +1,8 @@
 {% extends "layout.html" %}
 
 {% block body %}
-
+<div class="home-container">
+<h1>Flavor Pairings</h1>
 <div class="Card">
     <div class="CardInner">
     <label>What ingredient do you have on hand?</label>
@@ -17,6 +18,7 @@
     </div>
    </div>
   </div>
+</div>
 
   <datalist id="search-options">
     {% for option in allMains %}

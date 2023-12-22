@@ -18,7 +18,10 @@ def internalServiceError(error):
 
 @app.route("/results")
 def results():
-    main = request.args.get("choice")
-    pairings = ingredientPairings.get(main.lower())
-    allMains = ingredientPairings.keys()
-    return render_template("results.html", pairings=pairings, main=main.capitalize(), allMains=allMains)
+    try:
+        main = request.args.get("choice")
+        pairings = ingredientPairings.get(main.lower())
+        allMains = ingredientPairings.keys()
+        return render_template("results.html", pairings=pairings, main=main.capitalize(), allMains=allMains)
+    except TypeError:
+        return render_template("error-index.html")
