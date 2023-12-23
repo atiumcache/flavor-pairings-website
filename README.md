@@ -2,11 +2,11 @@
 
 View the prototype here: 
 
-http://atiumcache.pythonanywhere.com/
+https://flavor-pairings.streamlit.app/
 
-We are currently working on CSS and additional functionality.
+We are currently working on CSS and additional functionality for the Flask version. The main code for the Streamlit app is nearly identical.
 
-With an optimized UX/UI, this app will be utilized by chefs and cooks around the world, both professional and amateur.
+With an optimized UX/UI, this app could be utilized by chefs and cooks around the world, both professional and amateur.
 
 ## Usage
 
