@@ -1,164 +1,408 @@
-@import url('https://fonts.googleapis.com/css?family=Orbitron&display=swap');
- @import url('https://fonts.googleapis.com/css?family=Hind&display=swap');
- * {
-	 -webkit-font-smoothing: antialiased;
-	 color: #acbdce;
-}
- :root {
-	 --border-radius: 10px;
-}
- body, html {
-	 background: #e2e9f4;
-	 display: grid;
-	 height: 100%;
-	 grid-template: 2fr;
-	 place-items: center;
-	 margin: 0;
-	 padding: 0;
-	
+:root {
+    /* Add these styles to your global stylesheet, which is used across all site pages. You only need to do this once. All elements in the library derive their variables and base styles from this central sheet, simplifying site-wide edits. For instance, if you want to modify how your h2's appear across the site, you just update it once in the global styles, and the changes apply everywhere. */
+    --primary: #46aa91;
+    --primaryLight: #ffba43;
+    --secondary: #ffba43;
+    --secondaryLight: #ffba43;
+    --headerColor: #1a1a1a;
+    --bodyTextColor: #4e4b66;
+    --bodyTextColorWhite: #fafbfc;
+    /* 13px - 16px */
+    --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
+    /* 31px - 49px */
+    --headerFontSize: clamp(1.9375rem, 3.9vw, 3.0625rem);
+    --bodyFontSize: 1rem;
+    /* 60px - 100px top and bottom */
+    --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
 }
 
-.home-container {
-	position: static;
+body {
+    margin: 0;
+    padding: 0;
 }
 
-p {
-	color: #6d7f8f;
+*, *:before, *:after {
+    /* prevents padding from affecting height and width */
+    box-sizing: border-box;
+}
+.cs-topper {
+    font-size: var(--topperFontSize);
+    line-height: 1.2em;
+    text-transform: uppercase;
+    text-align: inherit;
+    letter-spacing: .1em;
+    font-weight: 700;
+    color: var(--bodyTextColor);
+    margin-bottom: 0.25rem;
+    display: block;
 }
 
-h1 {
-    color: #6d7f8f;
-    font-family: 'Orbitron', sans-serif;
-	 font-weight: 600;
+.cs-title {
+    font-size: var(--headerFontSize);
+    font-weight: 900;
+    line-height: 1.2em;
+    text-align: inherit;
+    max-width: 43.75rem;
+    margin: 0 0 1rem 0;
+    color: var(--headerColor);
+    position: relative;
 }
 
-h2 {
-	color: #6d7f8f;
-    font-family: 'Orbitron', sans-serif;
-	 font-weight: 600;
+#steps-584 .cs-title {
+	color: var(--bodyTextColorWhite);
 }
 
-li {
-	color: #6d7f8f;
+.cs-text {
+    font-size: var(--bodyFontSize);
+    line-height: 1.5em;
+    text-align: inherit;
+    width: 100%;
+    max-width: 40.625rem;
+    margin: 0;
+    color: var(--bodyTextColor);
 }
+                            
 
- .Card {
-	
-	 padding: 1px;
-	 border-radius: var(--border-radius);
-	 background: linear-gradient(-67deg, rgba(200, 216, 231, .7), rgba(255, 255, 255, .8));
-	 overflow: hidden;
-	 box-shadow: -2px -2px 6px rgba(255, 255, 255, .6), 2px 2px 12px #c8d8e7;
-	 width: 380px;
-}
- .CardInner {
-	 padding: 16px 16px;
-	 background-color: #e2e9f4;
-	 border-radius: var(--border-radius);
-}
- .container {
-	 display: flex;
-}
- .Icon {
-	 min-width: 46px;
-	 min-height: 46px;
-	 display: flex;
-	 align-items: center;
-	 justify-content: center;
-	 border-radius: var(--border-radius);
-	 margin-right: 12px;
-	 box-shadow: -2px -2px 6px rgba(255, 255, 255, .6), 2px 2px 12px #c8d8e7;
-}
- .Icon svg {
-	 transform: translate(-1px, -1px);
-}
- label {
-	 font-family: "Hind", sans-serif;
-	 display: block;
-	 color: #3c4b66;
-	 margin-bottom: 12px;
-	 background: linear-gradient(45deg, rgba(107, 123, 143, 1), #3c4b66);
-	 -webkit-background-clip: text;
-	 -webkit-text-fill-color: transparent;
-}
- .InputContainer {
-	 width: 100%;
-}
- input {
-	 background-color: #e3edf7;
-	 padding: 16px 32px;
-	 border: none;
-	 display: block;
-	 font-family: 'Orbitron', sans-serif;
-	 font-weight: 600;
-	 color: #a9b8c9;
-	 -webkit-appearance: none;
-	 transition: all 240ms ease-out;
-	 width: 100%;
-}
- input::placeholder {
-	 color: #6d7f8f;
-}
- input:focus {
-	 outline: none;
-	 color: #6d7f8f;
-	 background-color: #eff5fa;
-}
- .InputContainer {
-	 --top-shadow: inset 1px 1px 3px #c5d4e3, inset 2px 2px 6px #c5d4e3;
-	 --bottom-shadow: inset -2px -2px 4px rgba(255, 255, 255, .7);
-	 position: relative;
-	 border-radius: var(--border-radius);
-	 overflow: hidden;
-}
- .InputContainer:before, .InputContainer:after {
-	 left: 0;
-	 top: 0;
-	 display: block;
-	 content: "";
-	 pointer-events: none;
-	 width: 100%;
-	 height: 100%;
-	 position: absolute;
-}
- .InputContainer:before {
-	 box-shadow: var(--bottom-shadow);
-}
- .InputContainer:after {
-	 box-shadow: var(--top-shadow);
-}
- 
-/* NAV */
-.nav {
-	height: 70px;
-	margin-top:50px;
-	width: 80vw;
-	display: flex;
-	justify-content: space-between;
-	position: sticky;
-	top:0;
+/*-- -------------------------- -->
+<---            CTA             -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+	#cta-1506 {
+	  padding: var(--sectionPadding);
+	  padding-bottom: 0;
+	  position: relative;
+	  overflow: hidden;
+	  z-index: 1;
+	}
+	#cta-1506 .cs-container {
+	  width: 100%;
+	  /* changes to 1280px at tablet */
+	  max-width: 34.375rem;
+	  margin: 4em 2em;
+	  /* 16px - 20px */
+	  padding: clamp(1rem, 2vw, 1.25rem);
+	  overflow: hidden;
+	  /* 32px - 100px */
+	  border-radius: clamp(2rem, 5vw, 6.25rem);
+	  /* prevents padding from affecting height abd width */
+	  box-sizing: border-box;
+	  display: flex;
+	  flex-direction: column;
+	  align-items: center;
+	  /* 28px - 36px */
+	  gap: clamp(1.75rem, 4vw, 2.25rem);
+	  position: relative;
+	  z-index: 1;
+	}
+	#cta-1506 .cs-container:before {
+	  /* background-color */
+	  content: '';
+	  width: 100%;
+	  height: 100%;
+	  background: var(--primary);
+	  opacity: .1;
+	  position: absolute;
+	  display: block;
+	  top: 0;
+	  left: 0;
+	}
+	#cta-1506 .cs-content {
+	  /* set text align to left if content needs to be left aligned */
+	  text-align: center;
+	  width: 100%;
+	  max-width: 32.625rem;
+	  display: flex;
+	  flex-direction: column;
+	  /* centers content horizontally, set to flex-start to left align */
+	  align-items: center;
+	}
+	#cta-1506 .cs-title,
+	#cta-1506 .cs-text {
+	  max-width: 31.25rem;
+	}
+	#cta-1506 .cs-text {
+	  margin-bottom: 2rem;
+	}
+	#cta-1506 .cs-picture {
+	  /* this font size scales the images down, then we set it to 1em on large desktop */
+	  font-size: .68em;
+	  width: 15.3125em;
+	  height: 16.875em;
+	  overflow: hidden;
+	  display: block;
+	  position: relative;
+	  z-index: 1;
+	}
+	#cta-1506 .cs-picture img {
+	  width: 100%;
+	  height: 100%;
+	  object-fit: cover;
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	}
+	#cta-1506 .cs-picture1 {
+	  border-radius: 12.5em 12.5em 0 0;
+	}
+	#cta-1506 .cs-picture2 {
+	  border-radius: 0 0 12.5em 12.5em;
+	  order: -1;
+	}
+	#cta-1506 .cs-blob {
+	  --blobColor: var(--primary);
+	  opacity: .25;
+	  display: none;
+	  position: absolute;
+	}
+	#cta-1506 .cs-blob1 {
+	  width: 16.9375rem;
+	  height: auto;
+	  top: 0;
+	  left: 0;
+	}
+	#cta-1506 .cs-blob2 {
+	  width: 28.8125rem;
+	  height: auto;
+	  bottom: 0;
+	  right: 0;
+	}
+	#cta-1506 .cs-form {
+	  width: 100%;
+	  display: flex;
+	  flex-direction: column;
+	  align-items: center;
+	  justify-content: center;
+	  gap: 0.75rem;
+	  position: -webkit-sticky;
+  	  position: sticky;
+  	  top: 0;
+	  z-index: 1;
+	}
+	#cta-1506 .cs-input {
+	  font-size: 1rem;
+	  width: 100%;
+	  /* 46px - 72px */
+	  height: clamp(2.875rem, 8vw, 4.5rem);
+	  margin: 0;
+	  padding: 0;
+	  padding-left: 1.25rem;
+	  border: none;
+	  border-radius: 5rem;
+	  /* prevents padding from adding to width and height */
+	  box-sizing: border-box;
+	  display: block;
+	}
+	#cta-1506 .cs-input::placeholder {
+	  color: #767676;
+	}
+	#cta-1506 .cs-button-solid {
+	  font-size: 1rem;
+	  /* 46px - 56px */
+	  line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+	  text-decoration: none;
+	  font-weight: 700;
+	  text-align: center;
+	  margin: 0;
+	  color: #fff;
+	  overflow: hidden;
+	  min-width: 9.375rem;
+	  padding: 0 2rem;
+	  background-color: var(--primary);
+	  border-radius: 5rem;
+	  display: inline-block;
+	  position: relative;
+	  z-index: 1;
+	  /* prevents padding from adding to the width */
+	  box-sizing: border-box;
+	}
+	#cta-1506 .cs-button-solid:before {
+	  content: '';
+	  position: absolute;
+	  height: 100%;
+	  width: 0%;
+	  background: #000;
+	  opacity: 1;
+	  top: 0;
+	  left: 0;
+	  z-index: -1;
+	  transition: width .3s;
+	}
+	#cta-1506 .cs-button-solid:hover {
+	  cursor: pointer;
+	}
+	#cta-1506 .cs-button-solid:hover:before {
+	  width: 100%;
+	}
+	#cta-1506 .cs-submit {
+	  width: 100%;
+	  border: none;
+	}
   }
-  .nav ul {
-	display: flex;
-	list-style: none;
-	justify-content: flex-end;
-	gap: 25px;
-	align-items:center;
-	font-size: 18px;
-	cursor: pointer;
-	color: white;
+  /* Tablet - 768px */
+  @media only screen and (min-width: 48rem) {
+	#cta-1506 .cs-container {
+	  max-width: 80rem;
+	}
+	#cta-1506 .cs-picture1 {
+	  margin-right: auto;
+	}
+	#cta-1506 .cs-picture2 {
+	  margin-left: auto;
+	}
+	#cta-1506 .cs-blob {
+	  display: block;
+	}
+	#cta-1506 .cs-input {
+	  width: 100%;
+	}
+	#cta-1506 .cs-submit {
+	  width: auto;
+	  position: absolute;
+	  top: 50%;
+	  transform: translateY(-50%);
+	  right: 0.5rem;
+	}
   }
-  .nav li{
-	background-color:gray;
-	padding: 5px;
-	border-radius:7px;
+  /* Desktop - 1024px */
+  @media only screen and (min-width: 64rem) {
+	#cta-1506 .cs-container {
+	  padding: 5rem 1rem;
+	}
+	#cta-1506 .cs-picture1 {
+	  position: absolute;
+	  bottom: 0;
+	  /* 20px - 90px, manually set to 90px at larger desktop */
+	  left: clamp(1.25rem, 3vw, 5.625rem);
+	}
+	#cta-1506 .cs-picture2 {
+	  position: absolute;
+	  top: 0;
+	  /* 20px - 90px, manually set to 90px at larger desktop */
+	  right: clamp(1.25rem, 3vw, 5.625rem);
+	}
   }
- 
+  /* Larger Desktop - 1300px */
+  @media only screen and (min-width: 81.25rem) {
+	#cta-1506 .cs-picture {
+	  font-size: inherit;
+	}
+	#cta-1506 .cs-picture1 {
+	  left: 5.625rem;
+	}
+	#cta-1506 .cs-picture2 {
+	  right: 5.625rem;
+	}
+  }
+								  
 
-/* RESULTS */
 
-.results-container {
-	width: 80vw;
-	display: flex;
-	justify-content: left;
+  /*-- -------------------------- -->
+<---           Steps            -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #steps-584 {
+        padding: var(--sectionPadding);
+		padding-top: 3em;
+        background-color: var(--primary);
+    }
+    #steps-584 .cs-container {
+        width: 100%;
+        /* changes to 1280px at tablet */
+        max-width: 34.375rem;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* 48px - 64px */
+        gap: 1rem;
+    }
+    #steps-584 .cs-content {
+        /* set text align to left if content needs to be left aligned */
+        text-align: left;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        /* centers content horizontally, set to flex-start to left align */
+        align-items: flex-start;
+    }
+
+    #steps-584 .cs-card-group {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+    #steps-584 .cs-item {
+        list-style: none;
+        min-height: 10rem;
+        /* 16px - 24px left & right */
+        padding: 1rem clamp(1rem, 1.8vw, 1.5rem);
+        border-bottom: 1px solid var(--bodyTextColorWhite);
+        /* prevents padding and border from affecting height and width */
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    #steps-584 .cs-item:last-of-type {
+        border: none;
+    }
+    #steps-584 .cs-h3 {
+        font-size: 1.5rem;
+        font-weight: 500;
+        line-height: 1.2em;
+        text-align: left;
+        margin: 0 0 0.75rem 0;
+        color: var(--bodyTextColorWhite);
+        display: block;
+    }
+    #steps-584 .cs-item-text {
+        font-size: 1rem;
+        line-height: 1.5em;
+        text-align: left;
+        margin: 0;
+        color: var(--bodyTextColorWhite);
+    }
+    #steps-584 .cs-number {
+        font-size: 1rem;
+        font-weight: 900;
+        line-height: 1.2em;
+        /* auto pushes against other elements in a flexbox, this one forces it to be at the bottom of the flexbox */
+        margin: auto 0 0 0;
+        color: var(--bodyTextColorWhite);
+        display: block;
+    }
 }
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #steps-584 .cs-container {
+        max-width: 80rem;
+    }
+    #steps-584 .cs-card-group {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    #steps-584 .cs-item {
+        width: 48%;
+    }
+    #steps-584 .cs-item:nth-of-type(3) {
+        border-bottom: none;
+    }
+}
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #steps-584 .cs-card-group {
+        flex-wrap: nowrap;
+    }
+    #steps-584 .cs-item {
+        border-bottom: none;
+        border-right: 1px solid var(--bodyTextColorWhite);
+    }
+}
+
+                                

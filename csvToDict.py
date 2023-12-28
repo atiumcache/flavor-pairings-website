@@ -13,7 +13,7 @@ def csvToDict(pairingsCSV):
         ingredientReader = csv.reader(csvfile)
         pairingList = []
         prevKey = 'ACHIOTE SEEDS'
-        badKeywords = ('Season:', 'Techniques:', 'Taste:', 'Volume:', 'Weight:', 'Flavor Aff', 'Botanical rel', 'Tips:')
+        badKeywords = ('Season:', 'Techniques:', 'Taste:', 'Volume:', 'Weight:', 'Flavor Aff', 'Botanical rel', 'Tips:', 'Function:')
         for row in ingredientReader: # for each row in the file
             if row[0] != prevKey: # if current main is a new ingredient
                 ingredientMatches.update({prevKey.lower(): pairingList}) # update the dictionary with {main: pairing list}
