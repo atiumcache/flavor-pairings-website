@@ -1,408 +1,152 @@
-:root {
-    /* Add these styles to your global stylesheet, which is used across all site pages. You only need to do this once. All elements in the library derive their variables and base styles from this central sheet, simplifying site-wide edits. For instance, if you want to modify how your h2's appear across the site, you just update it once in the global styles, and the changes apply everywhere. */
-    --primary: #46aa91;
-    --primaryLight: #ffba43;
-    --secondary: #ffba43;
-    --secondaryLight: #ffba43;
-    --headerColor: #1a1a1a;
-    --bodyTextColor: #4e4b66;
-    --bodyTextColorWhite: #fafbfc;
-    /* 13px - 16px */
-    --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
-    /* 31px - 49px */
-    --headerFontSize: clamp(1.9375rem, 3.9vw, 3.0625rem);
-    --bodyFontSize: 1rem;
-    /* 60px - 100px top and bottom */
-    --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
-}
 
 body {
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+    background: #f4f4f4;
+    color: #333;
 }
 
-*, *:before, *:after {
-    /* prevents padding from affecting height and width */
-    box-sizing: border-box;
-}
-.cs-topper {
-    font-size: var(--topperFontSize);
-    line-height: 1.2em;
-    text-transform: uppercase;
-    text-align: inherit;
-    letter-spacing: .1em;
-    font-weight: 700;
-    color: var(--bodyTextColor);
-    margin-bottom: 0.25rem;
-    display: block;
+a { 
+	color: inherit; 
+	text-decoration: none;
+} 
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
 }
 
-.cs-title {
-    font-size: var(--headerFontSize);
-    font-weight: 900;
-    line-height: 1.2em;
-    text-align: inherit;
-    max-width: 43.75rem;
-    margin: 0 0 1rem 0;
-    color: var(--headerColor);
-    position: relative;
+header {
+    background: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
 }
 
-#steps-584 .cs-title {
-	color: var(--bodyTextColorWhite);
+.search-section {
+    background: white;
+    padding: 20px;
+    margin-top: 20px;
 }
 
-.cs-text {
-    font-size: var(--bodyFontSize);
-    line-height: 1.5em;
-    text-align: inherit;
-    width: 100%;
-    max-width: 40.625rem;
-    margin: 0;
-    color: var(--bodyTextColor);
+.search-section form {
+    display: flex;
+    flex-direction: column;
 }
-                            
 
-/*-- -------------------------- -->
-<---            CTA             -->
-<--- -------------------------- -*/
+.search-section label {
+    margin-bottom: 5px;
+}
 
-/* Mobile - 360px */
-@media only screen and (min-width: 0rem) {
-	#cta-1506 {
-	  padding: var(--sectionPadding);
-	  padding-bottom: 0;
-	  position: relative;
-	  overflow: hidden;
-	  z-index: 1;
-	}
-	#cta-1506 .cs-container {
-	  width: 100%;
-	  /* changes to 1280px at tablet */
-	  max-width: 34.375rem;
-	  margin: 4em 2em;
-	  /* 16px - 20px */
-	  padding: clamp(1rem, 2vw, 1.25rem);
-	  overflow: hidden;
-	  /* 32px - 100px */
-	  border-radius: clamp(2rem, 5vw, 6.25rem);
-	  /* prevents padding from affecting height abd width */
-	  box-sizing: border-box;
-	  display: flex;
-	  flex-direction: column;
-	  align-items: center;
-	  /* 28px - 36px */
-	  gap: clamp(1.75rem, 4vw, 2.25rem);
-	  position: relative;
-	  z-index: 1;
-	}
-	#cta-1506 .cs-container:before {
-	  /* background-color */
-	  content: '';
-	  width: 100%;
-	  height: 100%;
-	  background: var(--primary);
-	  opacity: .1;
-	  position: absolute;
-	  display: block;
-	  top: 0;
-	  left: 0;
-	}
-	#cta-1506 .cs-content {
-	  /* set text align to left if content needs to be left aligned */
-	  text-align: center;
-	  width: 100%;
-	  max-width: 32.625rem;
-	  display: flex;
-	  flex-direction: column;
-	  /* centers content horizontally, set to flex-start to left align */
-	  align-items: center;
-	}
-	#cta-1506 .cs-title,
-	#cta-1506 .cs-text {
-	  max-width: 31.25rem;
-	}
-	#cta-1506 .cs-text {
-	  margin-bottom: 2rem;
-	}
-	#cta-1506 .cs-picture {
-	  /* this font size scales the images down, then we set it to 1em on large desktop */
-	  font-size: .68em;
-	  width: 15.3125em;
-	  height: 16.875em;
-	  overflow: hidden;
-	  display: block;
-	  position: relative;
-	  z-index: 1;
-	}
-	#cta-1506 .cs-picture img {
-	  width: 100%;
-	  height: 100%;
-	  object-fit: cover;
-	  position: absolute;
-	  top: 0;
-	  left: 0;
-	}
-	#cta-1506 .cs-picture1 {
-	  border-radius: 12.5em 12.5em 0 0;
-	}
-	#cta-1506 .cs-picture2 {
-	  border-radius: 0 0 12.5em 12.5em;
-	  order: -1;
-	}
-	#cta-1506 .cs-blob {
-	  --blobColor: var(--primary);
-	  opacity: .25;
-	  display: none;
-	  position: absolute;
-	}
-	#cta-1506 .cs-blob1 {
-	  width: 16.9375rem;
-	  height: auto;
-	  top: 0;
-	  left: 0;
-	}
-	#cta-1506 .cs-blob2 {
-	  width: 28.8125rem;
-	  height: auto;
-	  bottom: 0;
-	  right: 0;
-	}
-	#cta-1506 .cs-form {
-	  width: 100%;
-	  display: flex;
-	  flex-direction: column;
-	  align-items: center;
-	  justify-content: center;
-	  gap: 0.75rem;
-	  position: -webkit-sticky;
-  	  position: sticky;
-  	  top: 0;
-	  z-index: 1;
-	}
-	#cta-1506 .cs-input {
-	  font-size: 1rem;
-	  width: 100%;
-	  /* 46px - 72px */
-	  height: clamp(2.875rem, 8vw, 4.5rem);
-	  margin: 0;
-	  padding: 0;
-	  padding-left: 1.25rem;
-	  border: none;
-	  border-radius: 5rem;
-	  /* prevents padding from adding to width and height */
-	  box-sizing: border-box;
-	  display: block;
-	}
-	#cta-1506 .cs-input::placeholder {
-	  color: #767676;
-	}
-	#cta-1506 .cs-button-solid {
-	  font-size: 1rem;
-	  /* 46px - 56px */
-	  line-height: clamp(2.875rem, 5.5vw, 3.5rem);
-	  text-decoration: none;
-	  font-weight: 700;
-	  text-align: center;
-	  margin: 0;
-	  color: #fff;
-	  overflow: hidden;
-	  min-width: 9.375rem;
-	  padding: 0 2rem;
-	  background-color: var(--primary);
-	  border-radius: 5rem;
-	  display: inline-block;
-	  position: relative;
-	  z-index: 1;
-	  /* prevents padding from adding to the width */
-	  box-sizing: border-box;
-	}
-	#cta-1506 .cs-button-solid:before {
-	  content: '';
-	  position: absolute;
-	  height: 100%;
-	  width: 0%;
-	  background: #000;
-	  opacity: 1;
-	  top: 0;
-	  left: 0;
-	  z-index: -1;
-	  transition: width .3s;
-	}
-	#cta-1506 .cs-button-solid:hover {
-	  cursor: pointer;
-	}
-	#cta-1506 .cs-button-solid:hover:before {
-	  width: 100%;
-	}
-	#cta-1506 .cs-submit {
-	  width: 100%;
-	  border: none;
-	}
+.search-section input {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.search-section button {
+    padding: 10px;
+    background: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.error-message, .results {
+    text-align: center;
+    padding: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background: #333;
+    color: white;
+}
+
+.results-wrapper {
+	display: grid;
+	grid-template-columns: 1fr;
+	place-items: center;
+	
   }
-  /* Tablet - 768px */
-  @media only screen and (min-width: 48rem) {
-	#cta-1506 .cs-container {
-	  max-width: 80rem;
-	}
-	#cta-1506 .cs-picture1 {
-	  margin-right: auto;
-	}
-	#cta-1506 .cs-picture2 {
-	  margin-left: auto;
-	}
-	#cta-1506 .cs-blob {
-	  display: block;
-	}
-	#cta-1506 .cs-input {
-	  width: 100%;
-	}
-	#cta-1506 .cs-submit {
-	  width: auto;
-	  position: absolute;
-	  top: 50%;
-	  transform: translateY(-50%);
-	  right: 0.5rem;
-	}
-  }
-  /* Desktop - 1024px */
-  @media only screen and (min-width: 64rem) {
-	#cta-1506 .cs-container {
-	  padding: 5rem 1rem;
-	}
-	#cta-1506 .cs-picture1 {
-	  position: absolute;
-	  bottom: 0;
-	  /* 20px - 90px, manually set to 90px at larger desktop */
-	  left: clamp(1.25rem, 3vw, 5.625rem);
-	}
-	#cta-1506 .cs-picture2 {
-	  position: absolute;
-	  top: 0;
-	  /* 20px - 90px, manually set to 90px at larger desktop */
-	  right: clamp(1.25rem, 3vw, 5.625rem);
-	}
-  }
-  /* Larger Desktop - 1300px */
-  @media only screen and (min-width: 81.25rem) {
-	#cta-1506 .cs-picture {
-	  font-size: inherit;
-	}
-	#cta-1506 .cs-picture1 {
-	  left: 5.625rem;
-	}
-	#cta-1506 .cs-picture2 {
-	  right: 5.625rem;
-	}
-  }
-								  
 
-
-  /*-- -------------------------- -->
-<---           Steps            -->
-<--- -------------------------- -*/
-
-/* Mobile - 360px */
-@media only screen and (min-width: 0rem) {
-    #steps-584 {
-        padding: var(--sectionPadding);
-		padding-top: 3em;
-        background-color: var(--primary);
-    }
-    #steps-584 .cs-container {
-        width: 100%;
-        /* changes to 1280px at tablet */
-        max-width: 34.375rem;
-        margin: auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        /* 48px - 64px */
-        gap: 1rem;
-    }
-    #steps-584 .cs-content {
-        /* set text align to left if content needs to be left aligned */
-        text-align: left;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        /* centers content horizontally, set to flex-start to left align */
-        align-items: flex-start;
-    }
-
-    #steps-584 .cs-card-group {
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        gap: 1.25rem;
-    }
-    #steps-584 .cs-item {
-        list-style: none;
-        min-height: 10rem;
-        /* 16px - 24px left & right */
-        padding: 1rem clamp(1rem, 1.8vw, 1.5rem);
-        border-bottom: 1px solid var(--bodyTextColorWhite);
-        /* prevents padding and border from affecting height and width */
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    #steps-584 .cs-item:last-of-type {
-        border: none;
-    }
-    #steps-584 .cs-h3 {
-        font-size: 1.5rem;
-        font-weight: 500;
-        line-height: 1.2em;
-        text-align: left;
-        margin: 0 0 0.75rem 0;
-        color: var(--bodyTextColorWhite);
-        display: block;
-    }
-    #steps-584 .cs-item-text {
-        font-size: 1rem;
-        line-height: 1.5em;
-        text-align: left;
-        margin: 0;
-        color: var(--bodyTextColorWhite);
-    }
-    #steps-584 .cs-number {
-        font-size: 1rem;
-        font-weight: 900;
-        line-height: 1.2em;
-        /* auto pushes against other elements in a flexbox, this one forces it to be at the bottom of the flexbox */
-        margin: auto 0 0 0;
-        color: var(--bodyTextColorWhite);
-        display: block;
-    }
-}
-/* Tablet - 768px */
-@media only screen and (min-width: 48rem) {
-    #steps-584 .cs-container {
-        max-width: 80rem;
-    }
-    #steps-584 .cs-card-group {
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-    #steps-584 .cs-item {
-        width: 48%;
-    }
-    #steps-584 .cs-item:nth-of-type(3) {
-        border-bottom: none;
-    }
-}
-/* Small Desktop - 1024px */
-@media only screen and (min-width: 64rem) {
-    #steps-584 .cs-card-group {
-        flex-wrap: nowrap;
-    }
-    #steps-584 .cs-item {
-        border-bottom: none;
-        border-right: 1px solid var(--bodyTextColorWhite);
-    }
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 20px;
 }
 
-                                
+.result-item {
+    background: white;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.search-bubble {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px;
+    background: #333;
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.search-bubble:active, .search-bubble:focus {
+    outline: none;
+}
+
+.results-grid {
+    margin-bottom: 80px;  /* Provide space for the bubble */
+}
+
+
+.navbar {
+    width: 100vw;
+    background: #333;
+    color: white;
+    padding: 10px 10px;
+	display: flex;
+	flex-direction: row;
+}
+
+.navbar .container {
+	width: 100vw;
+	display: flex;
+	align-self: flex-end;
+    justify-content: space-between;
+	flex-direction: row;
+}
+
+.navbar-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-form input {
+    padding: 10px;
+    margin-right: 10px;
+    border: none;
+    min-width: 300px;
+}
+
+.navbar-form button {
+    padding: 10px;
+    background: #444;
+    color: white;
+    border: none;
+    cursor: pointer;
+}

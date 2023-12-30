@@ -21,7 +21,7 @@ def csvToDict(pairingsCSV):
             if row[1].startswith(badKeywords):
                 pass
             else:
-                pairingList.append(row[1]) # add the pairing to the pairingList
+                pairingList.append(row[1].lower()) # add the pairing to the pairingList
             prevKey = row[0] # update prevKey to the current main
 
     return ingredientMatches
