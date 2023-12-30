@@ -1,31 +1,48 @@
 {% extends "layout.html" %}
 
 {% block body %}
+<script>
+    /* Show the search bubble only when scrolled away from top */
+window.onscroll = function() {
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        document.querySelector('.search-bubble').style.opacity = 1;
+    } else {
+        document.querySelector('.search-bubble').style.opacity = 0;
+    }
+};
+</script>
 
-<div class="nav">
-    <h1>Flavor Pairings</h1>
-    <div class="container">
-        <div class="Icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#657789" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        </div>
-        <div class="InputContainer">
-          <form action="/results" method="get">
-              <input list="search-options" autofocus name="choice" type="text">
-          </form>
-        </div>
-      </div>
+<nav class="navbar">
     
-  </div>
-
-
-    <div class="results-container">
-        <h2>Pairings for {{ main }}: </h2>
-        <ul>
-        {% for item in pairings %}
-            <li>
-                {{item}}
-            </li>
-        {% endfor %}
-        </ul>
+    <div class="container">
+        <h1><a href="/">Flavor Pairings</a></h1>
+        <form class="navbar-form" action="/results" method="get">
+            <input list="search-options" type="text" id="ingredient" name="choice" placeholder="Search ingredients..." required>
+            <button type="submit">Search</button>
+        </form>
     </div>
+</nav>
+
+                          
+
+<datalist id="search-options">
+{% for option in allMains %}
+    <option value="{{ option }}">
+{% endfor %}
+</datalist>
+
+<div class="results-wrapper">
+<div class="results">
+    <h2>Flavor Pairings Found for {{ main }}</h2>
+    <div class="results-grid">
+        {% for result in pairings %}
+        <div class="result-item">{{ result }}</div>
+        {% endfor %}
+    </div>
+    <a href="#top" class="search-bubble">Search Again</a>
+</div>
+         
+</div>
+
+
 {% endblock %}

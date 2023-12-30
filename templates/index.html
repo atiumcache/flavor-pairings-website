@@ -1,24 +1,25 @@
 {% extends "layout.html" %}
 
 {% block body %}
-<div class="home-container">
-<h1>Flavor Pairings</h1>
-<div class="Card">
-    <div class="CardInner">
-    <label>What ingredient do you have on hand?</label>
-    <div class="container">
-      <div class="Icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#657789" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      </div>
-      <div class="InputContainer">
-        <form action="/results" method="get">
-            <input list="search-options" autofocus name="choice" type="text">
-        </form>
-      </div>
+
+
+
+<div class="container">
+        <header>
+            <h1>Find Your Flavor Pairings</h1>
+        </header>
+        <main>
+            <section class="search-section">
+                <form action="/results" method="get">
+                    <label for="ingredient">Enter an Ingredient:</label>
+                    <input list="search-options" type="text" id="ingredient" name="choice" placeholder="e.g., Garlic, Blueberries" required>
+                    <button type="submit">Find Pairings</button>
+                </form>
+            </section>
+        </main>
+        
     </div>
-   </div>
-  </div>
-</div>
+                              
 
   <datalist id="search-options">
     {% for option in allMains %}
