@@ -2,26 +2,22 @@
 
 {% block body %}
 
-
-
 <div class="container">
-        <header>
-            <h1>Find Your Flavor Pairings</h1>
-        </header>
-        <main>
-            <section class="search-section">
-                <form action="/results" method="get">
-                    <label for="ingredient">Enter an Ingredient:</label>
-                    <input list="search-options" type="text" id="ingredient" name="choice" placeholder="e.g., Garlic, Blueberries" required>
-                    <button type="submit">Find Pairings</button>
-                </form>
-            </section>
-        </main>
-        
-    </div>
-                              
+    <header>
+        <h1>Find Your Flavor Pairings</h1>
+    </header>
+    <main>
+        <section class="search-section">
+            <form action="/results" method="get">
+                <label for="ingredient">Enter an Ingredient:</label>
+                <input list="search-options" type="text" id="ingredient" name="choice" placeholder="e.g., Garlic, Blueberries" required>
+                <button type="submit">Find Pairings</button>
+            </form>
+        </section>
+    </main> 
+</div>                          
 
-  <datalist id="search-options">
+<datalist id="search-options">
     {% for option in allMains %}
         <option value="{{ option }}">
     {% endfor %}

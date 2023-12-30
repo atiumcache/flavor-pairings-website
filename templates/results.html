@@ -1,6 +1,7 @@
 {% extends "layout.html" %}
 
 {% block body %}
+
 <script>
     /* Show the search bubble only when scrolled away from top */
 window.onscroll = function() {
@@ -13,7 +14,6 @@ window.onscroll = function() {
 </script>
 
 <nav class="navbar">
-    
     <div class="container">
         <h1><a href="/">Flavor Pairings</a></h1>
         <form class="navbar-form" action="/results" method="get">
@@ -22,9 +22,7 @@ window.onscroll = function() {
         </form>
     </div>
 </nav>
-
-                          
-
+                        
 <datalist id="search-options">
 {% for option in allMains %}
     <option value="{{ option }}">
@@ -32,17 +30,15 @@ window.onscroll = function() {
 </datalist>
 
 <div class="results-wrapper">
-<div class="results">
-    <h2>Flavor Pairings Found for {{ main }}</h2>
-    <div class="results-grid">
-        {% for result in pairings %}
-        <div class="result-item">{{ result }}</div>
-        {% endfor %}
-    </div>
-    <a href="#top" class="search-bubble">Search Again</a>
+    <div class="results">
+        <h2>Flavor Pairings Found for {{ main }}</h2>
+        <div class="results-grid">
+            {% for result in pairings %}
+            <div class="result-item">{{ result }}</div>
+            {% endfor %}
+        </div>
+        <a href="#top" class="search-bubble">Search Again</a>
+    </div>    
 </div>
-         
-</div>
-
 
 {% endblock %}
